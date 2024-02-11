@@ -1,0 +1,53 @@
+### Local host get api docs
+GET http://localhost:8080/api-docs
+###
+
+
+###local host add patient
+POST http://localhost:8080/patients
+Content-Type: application/json
+
+{
+  "firstName": "Jimmy",
+  "lastName": "Carter",
+  "diagnosis": "R great toe amputation",
+  "birthday": "1/19/24",
+  "weightBearingStatus": "NWB RLE",
+  "therapyOrderEndDate": "4/19/24",
+  "lastVisit": "2/10/24",
+  "nextVisit": "2/13/24",
+  "therapyGoals": "Transfer Min A with FWW",
+  "assignedNurse": "Kelly"
+}
+###
+
+### Local host get all patients
+GET http://localhost:8080/patients
+###
+
+###local host update patient
+PUT http://localhost:8080/patients/65b585bd6ddc914a35ebcb45
+Content-Type: application/json
+
+{
+  "firstName": "Jimmy",
+  "lastName": "Carter",
+  "diagnosis": "R great toe amputation",
+  "birthday": "1/19/24",
+  "weightBearingStatus": "TTWB RLE",
+  "therapyOrderEndDate": "4/19/24",
+  "lastVisit": "2/10/24",
+  "nextVisit": "2/13/24",
+  "therapyGoals": "Transfer Min A with FWW",
+  "assignedNurse": "Kelly"
+}
+###
+
+### Local host get all patients
+GET http://localhost:8080/patients
+###
+
+
+###local host delete patient
+DELETE http://localhost:8080/patients/65c852f02146cfe216211cdd
+###
