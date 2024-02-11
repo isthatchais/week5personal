@@ -51,3 +51,57 @@ GET http://localhost:8080/patients
 ###local host delete patient
 DELETE http://localhost:8080/patients/65c852f02146cfe216211cdd
 ###
+
+### render get api docs
+GET https://cse341byui05personal.onrender.com/api-docs/
+###
+
+
+###render add patient
+POST https://cse341byui05personal.onrender.com/patients
+Content-Type: application/json
+
+{
+  "firstName": "Jimmy",
+  "lastName": "Carter",
+  "diagnosis": "R great toe amputation",
+  "birthday": "1/19/24",
+  "weightBearingStatus": "NWB RLE",
+  "therapyOrderEndDate": "4/19/24",
+  "lastVisit": "2/10/24",
+  "nextVisit": "2/13/24",
+  "therapyGoals": "Transfer Min A with FWW",
+  "assignedNurse": "Kelly"
+}
+###
+
+### render get one patient
+GET https://cse341byui05personal.onrender.com/patients/65c85df4bc676b8348adb555
+###
+
+###render update patient
+PUT https://cse341byui05personal.onrender.com/patients/65c85df4bc676b8348adb555
+Content-Type: application/json
+
+{
+  "firstName": "Jimmy",
+  "lastName": "Carter",
+  "diagnosis": "R great toe amputation",
+  "birthday": "1/19/24",
+  "weightBearingStatus": "TTWB RLE",
+  "therapyOrderEndDate": "4/19/24",
+  "lastVisit": "2/10/24",
+  "nextVisit": "2/13/24",
+  "therapyGoals": "Transfer Min A with FWW",
+  "assignedNurse": "Kelly"
+}
+###
+
+### render get all patients
+GET https://cse341byui05personal.onrender.com/patients
+###
+
+
+###render delete patient
+DELETE https://cse341byui05personal.onrender.com/patients/65c85df4bc676b8348adb555
+###
