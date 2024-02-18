@@ -14,6 +14,9 @@ const getAllPatients = async (req, res) => {
 };
 
 const getOnePatient = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id.');
+  }
   const contactId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db('patients').collection('patients').find({ _id: contactId });
   if (result) {
@@ -48,6 +51,9 @@ const addPatient = async (req, res) => {
 };
 
 const updatePatient = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id.');
+  }
   const userId = new ObjectId(req.params.id);
   const patient = {
     firstName: req.body.firstName,
@@ -75,6 +81,9 @@ const updatePatient = async (req, res) => {
 };
 
 const deletePatient = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id.');
+  }
   const userId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDb()
