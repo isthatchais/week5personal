@@ -22,7 +22,7 @@ const addPatient = async (req, res) => {
   const patient = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    diagnosis: req.body.email,
+    diagnosis: req.body.diagnosis,
     birthday: req.body.birthday,
     weightBearingStatus: req.body.weightBearingStatus,
     therapyOrderEndDate: req.body.therapyOrderEndDate,
@@ -44,7 +44,7 @@ const updatePatient = async (req, res) => {
   const patient = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    diagnosis: req.body.email,
+    diagnosis: req.body.diagnosis,
     birthday: req.body.birthday,
     weightBearingStatus: req.body.weightBearingStatus,
     therapyOrderEndDate: req.body.therapyOrderEndDate,
@@ -71,7 +71,7 @@ const deletePatient = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db('patients')
-    .collection('patient')
+    .collection('patients')
     .deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
