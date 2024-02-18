@@ -26,7 +26,7 @@ GET http://localhost:8080/patients
 ###
 
 ###local host update patient
-PUT http://localhost:8080/patients/65c7d858776f77d2400edbc3
+PUT http://localhost:8080/patients/65c7d858776f77d2400edbc
 Content-Type: application/json
 
 {
@@ -107,5 +107,5 @@ GET https://cse341byui05personal.onrender.com/patients
 
 
 ###render delete patient
-DELETE https://cse341byui05personal.onrender.com/patients/65d171e022d584623e3adc9d
+DELETE https://cse341byui05personal.onrender.com/patients/65d184d95300d6d09a53f5b
 ###
