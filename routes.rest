@@ -26,19 +26,19 @@ GET http://localhost:8080/patients
 ###
 
 ###local host update patient
-PUT http://localhost:8080/patients/65d166ebc2cd3e01a486f1d6
+PUT http://localhost:8080/patients/65c7d858776f77d2400edbc3
 Content-Type: application/json
 
 {
-  "firstName": "Jimmy",
-  "lastName": "Carter",
-  "diagnosis": "R great toe amputation",
+  "firstName": "Geroge H. W.",
+  "lastName": "Bush",
+  "diagnosis": "GLF, L hip IM nail",
   "birthday": "1/19/24",
-  "weightBearingStatus": "TTWB RLE",
-  "therapyOrderEndDate": "4/19/24",
-  "lastVisit": "2/10/24",
+  "weightBearingStatus": "TTWB LLE",
+  "therapyOrderEndDate": "3/19/24",
+  "lastVisit": "2/8/24",
   "nextVisit": "2/13/24",
-  "therapyGoals": "Transfer Min A with FWW",
+  "therapyGoals": "Transer CGA FWW",
   "assignedNurse": "Kelly"
 }
 ###
@@ -75,12 +75,16 @@ Content-Type: application/json
 }
 ###
 
+### render get all patients
+GET https://cse341byui05personal.onrender.com/patients
+###
+
 ### render get one patient
-GET https://cse341byui05personal.onrender.com/patients/65c85df4bc676b8348adb555
+GET https://cse341byui05personal.onrender.com/patients/65d171e022d584623e3adc9d
 ###
 
 ###render update patient
-PUT https://cse341byui05personal.onrender.com/patients/65c85df4bc676b8348adb555
+PUT https://cse341byui05personal.onrender.com/patients/65d171e022d584623e3adc9d
 Content-Type: application/json
 
 {
@@ -103,5 +107,5 @@ GET https://cse341byui05personal.onrender.com/patients
 
 
 ###render delete patient
-DELETE https://cse341byui05personal.onrender.com/patients/65c85df4bc676b8348adb555
+DELETE https://cse341byui05personal.onrender.com/patients/65d171e022d584623e3adc9d
 ###
