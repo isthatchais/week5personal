@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 //const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./db/connect');
 const app = express();
-const port = https://cse341byui05personal.onrender.com/;
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
