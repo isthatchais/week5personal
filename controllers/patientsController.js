@@ -3,19 +3,27 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllPatients = async (req, res) => {
   const result = await mongodb.getDb().db('patients').collection('patients').find();
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+  if (result) {
+    result.toArray().then((lists) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
+  } else {
+    res.status(400).json(result.error || 'Error occurred while retrieving patients.');
+  }
 };
 
 const getOnePatient = async (req, res) => {
   const contactId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db('patients').collection('patients').find({ _id: contactId });
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
+  if (result) {
+    result.toArray().then((lists) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists[0]);
+    });
+  } else {
+    res.status(400).json(result.error || 'Error occurred while retrieving patient.');
+  }
 };
 
 const addPatient = async (req, res) => {
@@ -77,7 +85,7 @@ const deletePatient = async (req, res) => {
   if (response.deletedCount > 0) {
     res.status(200).send();
   } else {
-    res.status(500).json(response.error || 'Error occurred while deleting the patient.');
+    res.status(500).json(response.error || 'Error occurred while deleting patient.');
   }
 };
 
